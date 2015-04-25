@@ -55,17 +55,14 @@ public class PictureContainer extends RelativeLayout {
 
   public void setPictures(String backPictureUrl, List<PictureModel.DiyPart> diyParts) {
     this.backPictureUrl = backPictureUrl;
-
     if (TextUtils.isEmpty(backPictureUrl) || diyParts == null || diyParts.isEmpty()) {
       return;
     }
-
     RelativeLayout.LayoutParams layoutParams =
         new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
     NetworkImageView back = new NetworkImageView(getContext());
     back.setImageUrl(backPictureUrl, imageLoader);
     this.addView(back, layoutParams);
-
     for (PictureModel.DiyPart diyPart : diyParts) {
       if (diyPart != null && diyPart.diyLayerList != null && !diyPart.diyLayerList.isEmpty()) {
         NetworkImageView partLayer = new NetworkImageView(getContext());
@@ -77,7 +74,7 @@ public class PictureContainer extends RelativeLayout {
   }
 
   public void updateLayer(String partTitle, PictureModel.DiyLayer diyLayer) {
-    if (TextUtils.isEmpty(partTitle) && diyLayer != null && !networkImageViewMap.isEmpty()) {
+    if (!TextUtils.isEmpty(partTitle) && diyLayer != null && !networkImageViewMap.isEmpty()) {
       NetworkImageView networkImageView = networkImageViewMap.get(partTitle);
 
       if (networkImageView != null && !TextUtils.isEmpty(diyLayer.layerResUrl)) {

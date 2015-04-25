@@ -19,11 +19,11 @@
                 android:layout_height="250dp">
             </me.wheam.enjoypictures.PictureContainer>
 
-            <RelativeLayout
-                android:id="@+id/parts_container"
+            <me.wheam.enjoypictures.PictureSelector
+                android:id="@+id/picture_selector"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-            </RelativeLayout>
+            </me.wheam.enjoypictures.PictureSelector>
 
         </LinearLayout>
     </ScrollView>

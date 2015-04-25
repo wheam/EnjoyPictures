@@ -3,11 +3,6 @@ package me.wheam.enjoypictures;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.RelativeLayout;
-
-import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.ImageLoader;
-import com.android.volley.toolbox.NetworkImageView;
 
 /**
  * @author wheam@wandoujia.com (Qi Zhang)
@@ -16,8 +11,8 @@ public class DiyActivity extends Activity {
 
   private PictureModel pictureModel;
 
-  private RelativeLayout picturesContainer;
-  private RelativeLayout partsContainer;
+  private PictureContainer picturesContainer;
+  private PictureSelector pictureSelector;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -26,10 +21,17 @@ public class DiyActivity extends Activity {
     Intent intent = getIntent();
     pictureModel = (PictureModel) intent.getSerializableExtra(Constants.KEY_PICTURE_MODEL);
 
-    picturesContainer = (RelativeLayout) findViewById(R.id.pictures_container);
-    partsContainer = (RelativeLayout) findViewById(R.id.parts_container);
+    picturesContainer = (PictureContainer) findViewById(R.id.pictures_container);
+    pictureSelector = (PictureSelector) findViewById(R.id.picture_selector);
 
-
-
+    if (pictureModel != null) {
+      picturesContainer.setPictures(pictureModel.bigPictureDrawableId, pictureModel.diyPartList);
+      pictureSelector.setDiyParts(pictureModel.diyPartList, new DiyPartItemView.OnItemClickListener() {
+        @Override
+        public void onClick(String partTitle, PictureModel.DiyLayer diyLayer) {
+          picturesContainer.updateLayer(partTitle, diyLayer);
+        }
+      });
+    }
   }
 }

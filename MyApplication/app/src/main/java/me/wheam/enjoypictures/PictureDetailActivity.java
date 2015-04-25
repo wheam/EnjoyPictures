@@ -48,7 +48,7 @@ public class PictureDetailActivity extends Activity {
         @Override
         public void onClick(View view) {
           if (pictureModel.diyPartList != null && !pictureModel.diyPartList.isEmpty()) {
-            Intent intent = new Intent(PictureDetailActivity.this, PictureDetailActivity.class);
+            Intent intent = new Intent(PictureDetailActivity.this, DiyActivity.class);
             intent.putExtra(Constants.KEY_PICTURE_MODEL, pictureModel);
             startActivity(intent);
           }

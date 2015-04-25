@@ -35,11 +35,11 @@ public class PictureModelFactory implements Serializable {
         "http://7u2h6n.com1.z0.glb.clouddn.com/flower1.png"));
     diyLayerList.add(new PictureModel.DiyLayer(
         "http://7u2h6n.com1.z0.glb.clouddn.com/flower2_layer.png",
-        "http://7u2h6n.com1.z0.glb.clouddn.com/flower2_layer.png"));
+        "http://7u2h6n.com1.z0.glb.clouddn.com/flower2.png"));
     diyLayerList.add(new PictureModel.DiyLayer(
         "http://7u2h6n.com1.z0.glb.clouddn.com/flower3_layer.png",
         "http://7u2h6n.com1.z0.glb.clouddn.com/flower3.png"));
-    PictureModel.DiyPart diyPartFlower = new PictureModel.DiyPart("水墨花", diyLayerList);
+    PictureModel.DiyPart diyPartFlower = new PictureModel.DiyPart("自定义水墨花", diyLayerList);
     diyPartList.add(diyPartFlower);
     pictureModelForShiqi.diyPartList = diyPartList;
     pictureModelList.add(pictureModelForShiqi);
@@ -57,7 +57,9 @@ public class PictureModelFactory implements Serializable {
             "清泉底浮动，泛流到水面上，";
     pictureModelForZhanguo.littlePictureDrawableId =
         "http://7u2h6n.com1.z0.glb.clouddn.com/zhanguo.jpg";
-    pictureModelForZhanguo.diyPartList = null;
+    pictureModelForZhanguo.bigPictureDrawableId =
+        "http://7u2h6n.com1.z0.glb.clouddn.com/diy_big_picture.jpg";
+    pictureModelForZhanguo.diyPartList = diyPartList;
     pictureModelList.add(pictureModelForZhanguo);
 
     // sample 3
@@ -73,13 +75,34 @@ public class PictureModelFactory implements Serializable {
             "清泉底浮动，泛流到水面上，";
     pictureModelForHandai.littlePictureDrawableId =
         "http://7u2h6n.com1.z0.glb.clouddn.com/handai.jpg";
-    pictureModelForHandai.diyPartList = null;
+    pictureModelForHandai.bigPictureDrawableId =
+        "http://7u2h6n.com1.z0.glb.clouddn.com/diy_big_picture.jpg";
+    pictureModelForHandai.diyPartList = diyPartList;
     pictureModelList.add(pictureModelForHandai);
 
     pictureModelList.add(pictureModelForShiqi);
     pictureModelList.add(pictureModelForZhanguo);
     pictureModelList.add(pictureModelForHandai);
 
+    pictureModelList.add(pictureModelForShiqi);
+    pictureModelList.add(pictureModelForZhanguo);
+    pictureModelList.add(pictureModelForHandai);
+
+    pictureModelList.add(pictureModelForShiqi);
+    pictureModelList.add(pictureModelForZhanguo);
+    pictureModelList.add(pictureModelForHandai);
+
+    pictureModelList.add(pictureModelForShiqi);
+    pictureModelList.add(pictureModelForZhanguo);
+    pictureModelList.add(pictureModelForHandai);
+
+    pictureModelList.add(pictureModelForShiqi);
+    pictureModelList.add(pictureModelForZhanguo);
+    pictureModelList.add(pictureModelForHandai);
+
+    pictureModelList.add(pictureModelForShiqi);
+    pictureModelList.add(pictureModelForZhanguo);
+    pictureModelList.add(pictureModelForHandai);
 
     return pictureModelList;
   }
