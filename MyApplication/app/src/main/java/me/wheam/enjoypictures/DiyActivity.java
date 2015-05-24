@@ -1,37 +1,34 @@
 package me.wheam.enjoypictures;
 
+import java.util.List;
+
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 
 /**
  * @author wheam@wandoujia.com (Qi Zhang)
  */
-public class DiyActivity extends Activity {
-
-  private PictureModel pictureModel;
+public class DiyActivity extends BaseActivity {
 
   private PictureContainer picturesContainer;
   private PictureSelector pictureSelector;
+  private List<DiyModel.DiyPart> diyPartList = DiyModel.buildDefaultDiyParts();
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_diy);
-    Intent intent = getIntent();
-    pictureModel = (PictureModel) intent.getSerializableExtra(Constants.KEY_PICTURE_MODEL);
-
     picturesContainer = (PictureContainer) findViewById(R.id.pictures_container);
     pictureSelector = (PictureSelector) findViewById(R.id.picture_selector);
+    picturesContainer
+        .setPictures("http://7u2h6n.com1.z0.glb.clouddn.com/diy_big_picture.jpg", diyPartList);
+    pictureSelector.setDiyParts(diyPartList,
+        new DiyPartItemView.OnItemClickListener() {
+          @Override
+          public void onClick(String partTitle, DiyModel.DiyLayer diyLayer) {
+            picturesContainer.updateLayer(partTitle, diyLayer);
+          }
+        });
 
-    if (pictureModel != null) {
-      picturesContainer.setPictures(pictureModel.bigPictureDrawableId, pictureModel.diyPartList);
-      pictureSelector.setDiyParts(pictureModel.diyPartList, new DiyPartItemView.OnItemClickListener() {
-        @Override
-        public void onClick(String partTitle, PictureModel.DiyLayer diyLayer) {
-          picturesContainer.updateLayer(partTitle, diyLayer);
-        }
-      });
-    }
   }
 }

@@ -27,7 +27,7 @@ public class PictureSelector extends LinearLayout {
     super(context, attrs, defStyleAttr, defStyleRes);
   }
 
-  public void setDiyParts(List<PictureModel.DiyPart> diyParts,
+  public void setDiyParts(List<DiyModel.DiyPart> diyParts,
       DiyPartItemView.OnItemClickListener onItemClickListener) {
     if (diyParts == null || diyParts.isEmpty()) {
       return;
@@ -35,7 +35,7 @@ public class PictureSelector extends LinearLayout {
     LinearLayout.LayoutParams layoutParams =
         new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
             LinearLayout.LayoutParams.WRAP_CONTENT);
-    for (PictureModel.DiyPart diyPart : diyParts) {
+    for (DiyModel.DiyPart diyPart : diyParts) {
       if (diyPart != null) {
         DiyPartItemView itemView = new DiyPartItemView(getContext());
         itemView.setData(diyPart, onItemClickListener);

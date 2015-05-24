@@ -2,7 +2,8 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -25,6 +26,27 @@
                 android:layout_height="wrap_content">
             </me.wheam.enjoypictures.PictureSelector>
 
+            <!--<TextView-->
+                <!--android:id="@+id/poem_label"-->
+                <!--android:layout_marginTop="15dp"-->
+                <!--android:hint="自定义题词"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"/>-->
+            <!--<EditText-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:id="@+id/poem_title"-->
+                <!--android:layout_marginLeft="15dp"-->
+                <!--android:hint="请输入题词的标题"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"/>-->
+            <!--<EditText-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:id="@+id/poem_message"-->
+                <!--android:layout_marginLeft="15dp"-->
+                <!--android:hint="请输入题词的内容"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"/>-->
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>

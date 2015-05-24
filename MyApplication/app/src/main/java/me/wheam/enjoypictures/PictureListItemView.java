@@ -63,13 +63,13 @@ public class PictureListItemView extends RelativeLayout {
 
   public void setData(final PictureModel pictureModel) {
     if (pictureModel != null) {
-      pictureBack.setImageUrl(pictureModel.littlePictureDrawableId, imageLoader);
+      pictureBack.setImageUrl(pictureModel.littlePictureUrl, imageLoader);
       dynasty.setText(pictureModel.dynasty);
       pictureName.setText(pictureModel.pictureName);
       this.setOnClickListener(new OnClickListener() {
         @Override
         public void onClick(View view) {
-          if (pictureModel.bigPictureDrawableId != null) {
+          if (pictureModel.bigPictureUrl != null) {
             Intent intent = new Intent(getContext(), PictureDetailActivity.class);
             intent.putExtra(Constants.KEY_PICTURE_MODEL, pictureModel);
             getContext().startActivity(intent);

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -58,7 +57,7 @@ public class DiyPartItemView extends RelativeLayout {
     }
   }
 
-  public void setData(final PictureModel.DiyPart diyPart,
+  public void setData(final DiyModel.DiyPart diyPart,
       final OnItemClickListener onItemClickListener) {
     if (diyPart == null || TextUtils.isEmpty(diyPart.title) || diyPart.diyLayerList == null
         || diyPart.diyLayerList.isEmpty()) {
@@ -68,7 +67,7 @@ public class DiyPartItemView extends RelativeLayout {
     LinearLayout.LayoutParams layoutParams =
         new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
             LinearLayout.LayoutParams.WRAP_CONTENT);
-    for (final PictureModel.DiyLayer diyLayer : diyPart.diyLayerList) {
+    for (final DiyModel.DiyLayer diyLayer : diyPart.diyLayerList) {
       if (diyLayer != null && !TextUtils.isEmpty(diyLayer.previewResUrl)) {
         NetworkImageView layer = new NetworkImageView(getContext());
         layoutParams.height = 400;
@@ -86,6 +85,6 @@ public class DiyPartItemView extends RelativeLayout {
   }
 
   public interface OnItemClickListener {
-    void onClick(String partTitle, PictureModel.DiyLayer diyLayer);
+    void onClick(String partTitle, DiyModel.DiyLayer diyLayer);
   }
 }
