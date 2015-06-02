@@ -1,18 +1,7 @@
 <resources>
 
-    <style name="AppTheme" parent="@android:style/Theme.Holo.Light">
-        <item name="android:actionBarStyle">@style/MyActionBar</item>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-    </style>
-
-    <style name="MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
-        <item name="android:background">@color/back</item>
-        <item name="android:titleTextStyle">@style/MyActionBarTitleText</item>
-        <item name="android:displayOptions">showTitle</item>
-        <!-- Customize your theme here. -->
-    </style>
-
-    <style name="MyActionBarTitleText" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
-        <item name="android:textColor">#fff</item>
+        <item name="android:textColorPrimary">#FFFFFF</item>
     </style>
 </resources>

@@ -5,14 +5,21 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#de2510"/>
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <me.wheam.enjoypictures.PictureContainer
                 android:id="@+id/pictures_container"
@@ -27,26 +34,26 @@
             </me.wheam.enjoypictures.PictureSelector>
 
             <!--<TextView-->
-                <!--android:id="@+id/poem_label"-->
-                <!--android:layout_marginTop="15dp"-->
-                <!--android:hint="自定义题词"-->
-                <!--android:layout_marginLeft="10dp"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"/>-->
+            <!--android:id="@+id/poem_label"-->
+            <!--android:layout_marginTop="15dp"-->
+            <!--android:hint="自定义题词"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"/>-->
             <!--<EditText-->
-                <!--android:layout_marginTop="10dp"-->
-                <!--android:id="@+id/poem_title"-->
-                <!--android:layout_marginLeft="15dp"-->
-                <!--android:hint="请输入题词的标题"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"/>-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:id="@+id/poem_title"-->
+            <!--android:layout_marginLeft="15dp"-->
+            <!--android:hint="请输入题词的标题"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"/>-->
             <!--<EditText-->
-                <!--android:layout_marginTop="10dp"-->
-                <!--android:id="@+id/poem_message"-->
-                <!--android:layout_marginLeft="15dp"-->
-                <!--android:hint="请输入题词的内容"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"/>-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:id="@+id/poem_message"-->
+            <!--android:layout_marginLeft="15dp"-->
+            <!--android:hint="请输入题词的内容"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"/>-->
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>

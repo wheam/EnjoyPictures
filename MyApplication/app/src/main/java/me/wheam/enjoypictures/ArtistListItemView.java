@@ -16,44 +16,44 @@ import com.android.volley.toolbox.Volley;
 /**
  * @author wheam@wandoujia.com (Qi Zhang)
  */
-public class PictureListItemView extends RelativeLayout {
+public class ArtistListItemView extends RelativeLayout {
 
 
   private NetworkImageView pictureBack;
   private TextView dynasty;
-  private TextView pictureName;
+  private TextView artistName;
   private static ImageLoader imageLoader;
   private static RequestQueue requestQueue;
 
-  public PictureListItemView(Context context) {
+  public ArtistListItemView(Context context) {
     super(context);
     init();
   }
 
-  public PictureListItemView(Context context, AttributeSet attrs) {
+  public ArtistListItemView(Context context, AttributeSet attrs) {
     super(context, attrs);
     init();
   }
 
-  public PictureListItemView(Context context, AttributeSet attrs, int defStyleAttr) {
+  public ArtistListItemView(Context context, AttributeSet attrs, int defStyleAttr) {
     super(context, attrs, defStyleAttr);
     init();
   }
 
-  public PictureListItemView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+  public ArtistListItemView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
     super(context, attrs, defStyleAttr, defStyleRes);
     init();
   }
 
   private void init() {
-    View.inflate(getContext(), R.layout.list_item_view, this);
+    View.inflate(getContext(), R.layout.artist_list_item_view, this);
     initViews();
   }
 
   private void initViews() {
     pictureBack = (NetworkImageView) findViewById(R.id.picture_back);
     dynasty = (TextView) findViewById(R.id.dynasty);
-    pictureName = (TextView) findViewById(R.id.picture_name);
+    artistName = (TextView) findViewById(R.id.artist_name);
     if (requestQueue == null) {
       requestQueue = Volley.newRequestQueue((Activity) getContext());
       imageLoader = new ImageLoader(requestQueue, new BitmapCache());
@@ -61,16 +61,16 @@ public class PictureListItemView extends RelativeLayout {
 
   }
 
-  public void setData(final PictureModel pictureModel) {
-    if (pictureModel != null) {
-      pictureBack.setImageUrl(pictureModel.littlePictureUrl, imageLoader);
-      dynasty.setText(pictureModel.dynasty);
-      pictureName.setText(pictureModel.pictureName);
+  public void setData(final ArtistModel artistModel) {
+    if (artistModel != null) {
+      pictureBack.setImageUrl(artistModel.littlePictureUrl, imageLoader);
+      dynasty.setText(artistModel.dynasty);
+      artistName.setText(artistModel.artistName);
       this.setOnClickListener(new OnClickListener() {
         @Override
         public void onClick(View view) {
-          Intent intent = new Intent(getContext(), PictureDetailActivity.class);
-          intent.putExtra(Constants.KEY_PICTURE_MODEL, pictureModel);
+          Intent intent = new Intent(getContext(), ArtistDetailActivity.class);
+          intent.putExtra(Constants.KEY_ARTIST_MODEL, artistModel);
           getContext().startActivity(intent);
         }
       });

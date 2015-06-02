@@ -4,6 +4,7 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -12,7 +13,7 @@ import com.readystatesoftware.systembartint.SystemBarTintManager;
 /**
  * @author wheam@wandoujia.com (Qi Zhang)
  */
-public class BaseActivity extends Activity {
+public class BaseActivity extends ActionBarActivity {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {

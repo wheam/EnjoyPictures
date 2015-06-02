@@ -16,44 +16,42 @@ import com.android.volley.toolbox.Volley;
 /**
  * @author wheam@wandoujia.com (Qi Zhang)
  */
-public class PictureListItemView extends RelativeLayout {
+public class DynastyListItemView extends RelativeLayout {
 
 
   private NetworkImageView pictureBack;
   private TextView dynasty;
-  private TextView pictureName;
   private static ImageLoader imageLoader;
   private static RequestQueue requestQueue;
 
-  public PictureListItemView(Context context) {
+  public DynastyListItemView(Context context) {
     super(context);
     init();
   }
 
-  public PictureListItemView(Context context, AttributeSet attrs) {
+  public DynastyListItemView(Context context, AttributeSet attrs) {
     super(context, attrs);
     init();
   }
 
-  public PictureListItemView(Context context, AttributeSet attrs, int defStyleAttr) {
+  public DynastyListItemView(Context context, AttributeSet attrs, int defStyleAttr) {
     super(context, attrs, defStyleAttr);
     init();
   }
 
-  public PictureListItemView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+  public DynastyListItemView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
     super(context, attrs, defStyleAttr, defStyleRes);
     init();
   }
 
   private void init() {
-    View.inflate(getContext(), R.layout.list_item_view, this);
+    View.inflate(getContext(), R.layout.dynasty_list_item_view, this);
     initViews();
   }
 
   private void initViews() {
     pictureBack = (NetworkImageView) findViewById(R.id.picture_back);
     dynasty = (TextView) findViewById(R.id.dynasty);
-    pictureName = (TextView) findViewById(R.id.picture_name);
     if (requestQueue == null) {
       requestQueue = Volley.newRequestQueue((Activity) getContext());
       imageLoader = new ImageLoader(requestQueue, new BitmapCache());
@@ -61,16 +59,15 @@ public class PictureListItemView extends RelativeLayout {
 
   }
 
-  public void setData(final PictureModel pictureModel) {
-    if (pictureModel != null) {
-      pictureBack.setImageUrl(pictureModel.littlePictureUrl, imageLoader);
-      dynasty.setText(pictureModel.dynasty);
-      pictureName.setText(pictureModel.pictureName);
+  public void setData(final DynastyModel dynastyModel) {
+    if (dynastyModel != null) {
+      pictureBack.setImageUrl(dynastyModel.littlePictureUrl, imageLoader);
+      dynasty.setText(dynastyModel.dynastyName);
       this.setOnClickListener(new OnClickListener() {
         @Override
         public void onClick(View view) {
-          Intent intent = new Intent(getContext(), PictureDetailActivity.class);
-          intent.putExtra(Constants.KEY_PICTURE_MODEL, pictureModel);
+          Intent intent = new Intent(getContext(), DynastyDetailActivity.class);
+          intent.putExtra(Constants.KEY_DYNASTY_MODEL, dynastyModel);
           getContext().startActivity(intent);
         }
       });

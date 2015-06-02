@@ -16,7 +16,7 @@
         android:layout_centerVertical="true"
         android:layout_marginLeft="30dp"
         android:background="#de2510"
-        android:layout_width="5dp"
+        android:layout_width="3dp"
         android:layout_height="50dp"/>
 
     <RelativeLayout
@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="14dp"
-            android:textColor="#FFFFFF"/>
+            android:textColor="#D3D3D3"/>
 
         <TextView
             android:id="@+id/picture_name"

@@ -13,38 +13,38 @@ import com.android.volley.toolbox.Volley;
 /**
  * @author wheam@wandoujia.com (Qi Zhang)
  */
-public class PictureDetailActivity extends BaseActivity {
+public class DynastyDetailActivity extends BaseActivity {
 
-  private PictureModel pictureModel;
+  private DynastyModel dynastyModel;
   private static ImageLoader imageLoader;
   private static RequestQueue requestQueue;
   private NetworkImageView pictureBack;
   private TextView description;
   private TextView dynasty;
-  private TextView pictureName;
+  private TextView dynastyDuration;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_picture_detail);
+    setContentView(R.layout.activity_dynasty_detail);
     Toolbar toolbar = (android.support.v7.widget.Toolbar) this.findViewById(R.id.toolbar);
     this.setSupportActionBar(toolbar);
     Intent intent = getIntent();
-    pictureModel = (PictureModel) intent.getSerializableExtra(Constants.KEY_PICTURE_MODEL);
+    dynastyModel = (DynastyModel) intent.getSerializableExtra(Constants.KEY_DYNASTY_MODEL);
     pictureBack = (NetworkImageView) findViewById(R.id.picture_back);
     description = (TextView) findViewById(R.id.description);
     dynasty = (TextView) findViewById(R.id.dynasty);
-    pictureName = (TextView) findViewById(R.id.picture_name);
+    dynastyDuration = (TextView) findViewById(R.id.dynasty_duration);
 
     if (requestQueue == null) {
       requestQueue = Volley.newRequestQueue(this);
       imageLoader = new ImageLoader(requestQueue, new BitmapCache());
     }
-    if (pictureModel != null) {
-      pictureBack.setImageUrl(pictureModel.bigPictureUrl, imageLoader);
-      dynasty.setText(pictureModel.dynasty);
-      pictureName.setText(pictureModel.descriptionTitle);
-      description.setText(pictureModel.descriptionDetail);
+    if (dynastyModel != null) {
+      pictureBack.setImageUrl(dynastyModel.bigPictureUrl, imageLoader);
+      dynasty.setText(dynastyModel.dynastyName);
+      description.setText(dynastyModel.descriptionDetail);
+      dynastyDuration.setText(dynastyModel.dynastyDuration);
     }
   }
 
