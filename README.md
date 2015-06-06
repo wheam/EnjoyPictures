@@ -5,7 +5,7 @@ a simple app to display every dynasty's pictures and artists of china, designed 
 [download the demo](https://github.com/wheam/EnjoyPictures/raw/master/demo.apk)
 
 
-![shots](https://github.com/wheam/EnjoyPictures/raw/master/shots/shots_artboard.jpg)
+![shots](https://github.com/wheam/EnjoyPictures/raw/master/shots/shots.jpg)
 
 
 ## depend on
