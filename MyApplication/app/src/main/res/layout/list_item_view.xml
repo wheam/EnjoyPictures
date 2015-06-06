@@ -1,47 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="220dp">
+    android:layout_height="220dp"
+    android:orientation="vertical">
 
     <com.android.volley.toolbox.NetworkImageView
         android:id="@+id/picture_back"
-        android:scaleType="centerCrop"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#70000000"/>
+
 
     <View
         android:id="@+id/line"
+        android:layout_width="3dp"
+        android:layout_height="50dp"
         android:layout_centerVertical="true"
         android:layout_marginLeft="30dp"
-        android:background="#de2510"
-        android:layout_width="3dp"
-        android:layout_height="50dp"/>
+        android:background="#de2510"/>
 
     <RelativeLayout
-        android:layout_centerVertical="true"
-        android:layout_toRightOf="@id/line"
-        android:layout_marginLeft="10dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/line">
+
         <TextView
             android:id="@+id/dynasty"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="14dp"
-            android:textColor="#D3D3D3"/>
+            android:textColor="#D3D3D3"
+            android:textSize="14dp"/>
 
         <TextView
             android:id="@+id/picture_name"
-            android:layout_below="@id/dynasty"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="18dp"
-            android:textColor="#FFFFFF"/>
+            android:layout_below="@id/dynasty"
+            android:textColor="#FFFFFF"
+            android:textSize="18dp"/>
 
-        </RelativeLayout>
-
+    </RelativeLayout>
 
 
 </RelativeLayout>

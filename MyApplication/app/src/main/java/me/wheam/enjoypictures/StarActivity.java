@@ -22,7 +22,7 @@ public class StarActivity extends Activity {
           StarActivity.this.finish(); // 结束启动动画界面
         }
       }
-    }, 5000); // 启动动画持续3秒钟
+    }, 3000); // 启动动画持续3秒钟
   }
 
 }

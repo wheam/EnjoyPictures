@@ -37,7 +37,6 @@ public class MainActivity extends BaseActivity implements MaterialTabListener {
       public void onPageSelected(int position) {
         // when user do a swipe the selected tab change
         tabHost.setSelectedNavigationItem(position);
-
       }
     });
 

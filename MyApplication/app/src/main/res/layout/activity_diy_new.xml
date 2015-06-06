@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:orientation="vertical">
+
+    <com.android.volley.toolbox.NetworkImageView
+        android:id="@id/picture_back"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="210dp"
+        android:clickable="true"
+        android:ems="1"
+        android:text="题词标题"
+        android:textColor="@color/back"
+        android:textSize="30dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/line1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="30dp"
+        android:layout_toLeftOf="@+id/title"
+        android:clickable="true"
+        android:ems="1"
+        android:text="自定义题词第一行"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:id="@+id/line2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/line1"
+        android:layout_marginRight="20dp"
+        android:layout_toLeftOf="@+id/line1"
+        android:clickable="true"
+        android:ems="1"
+        android:text="自定义题词第二行"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:id="@+id/line3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/line2"
+        android:layout_marginRight="20dp"
+        android:layout_toLeftOf="@+id/line2"
+        android:clickable="true"
+        android:ems="1"
+        android:text="自定义题词第三行"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:id="@+id/line4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/line3"
+        android:layout_marginRight="20dp"
+        android:layout_toLeftOf="@+id/line3"
+        android:clickable="true"
+        android:ems="1"
+        android:text="自定义题词第四行"
+        android:textSize="20dp"/>
+</RelativeLayout>

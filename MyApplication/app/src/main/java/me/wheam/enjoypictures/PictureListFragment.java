@@ -43,7 +43,7 @@ public class PictureListFragment extends Fragment {
     diyButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-        Intent intent = new Intent(getActivity(), DiyActivity.class);
+        Intent intent = new Intent(getActivity(), NewDiyActivity.class);
         getActivity().startActivity(intent);
       }
     });

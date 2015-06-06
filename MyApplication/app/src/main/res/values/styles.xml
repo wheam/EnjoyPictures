@@ -4,4 +4,9 @@
         <!-- Customize your theme here. -->
         <item name="android:textColorPrimary">#FFFFFF</item>
     </style>
+
+    <style name="FullScreenTheme" parent="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen">
+        <!-- Customize your theme here. -->
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
 </resources>
